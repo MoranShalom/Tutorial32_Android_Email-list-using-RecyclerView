@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="oval">
+        <solid
+            android:color="#666666"/>
+
+    </shape>
+
+
+    <!--
+       7- Create a new resource file and name it recyclerview_mail_item.xml, in this file you are
+       going to add views that later will appear in each row inside Android Recyclerview.
+
+       8- First view that you are going to add inside recyclerview_mail_item.xml is the email
+       sender icon which is not actually an icon! It’s just an Android Textview with a circle
+       drawable as a background which appear like an actual icon :]
+
+       9- Create a new file under drawable folder and name it rounded_drawable.xml,
+        inside this file you will add an Android shape which is oval with a background color.
+
+        next: 10- Open up recyclerview_mail_item.xml file and add an Android TextView that
+         will represent the email sender icon. In this TextView you will use the rounded
+         drawable as the background and you will need to adjust the layout width and height
+          that so that it will look great next to the other views.-->

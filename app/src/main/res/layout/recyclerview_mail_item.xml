@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_drawable"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <!--12- Next you need to add the email sender TextView, this TextView will be positioned next to
+    (tvIcon) TextView.-->
+    <TextView
+        android:id="@+id/tvEmailSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/tvIcon"
+        android:layout_toRightOf="@+id/tvIcon"
+        android:text="TextView"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 14- Now you need to add email title TextView, this TextView will be positioned below
+        (tvEmailSender) and make sure to change the text style to make it bold.-->
+    <TextView
+        android:id="@+id/tvEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEmailSender"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/tvIcon"
+        android:layout_toRightOf="@+id/tvIcon"
+        android:text="TextView"
+        android:textStyle="bold" />
+
+    <!--15- Add the email details TextView, this will be placed below (tvEmailTitle)
+     and make sure to add some margin from the top.-->
+
+    <!--16- As you’ve noticed in the image above that the TextView text is very long and that doesn’t look good, imagine the user have to scroll through a long list with each row having this type of long text! It will be tiring. Fortunately there is a solution, you can use Android android:ellipsize="end" and android:maxLines="1" together inside Android TextView and when you have a long text, Android will transform that into 3 dots.-->
+    <TextView
+        android:id="@+id/tvEmailDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEmailTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/tvIcon"
+        android:layout_toRightOf="@+id/tvIcon"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="This is a very long text and we need to show 3...(dots)" />
+
+    <!--17- The last TextView that you need to add is the time of when the email reached, this TextView will be placed on the same line as (tvEmailSender) and should be aligned to the right of the screen.-->
+
+    <TextView
+        android:id="@+id/tvEmailTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tvEmailSender"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="TextView" />
+
+    <!--18- Finally you need to add Android ImageView, this ImageView will have a star icon and it will be used to add a particular email to your favorites. This ImageView will be placed under (tvEmailTime) and you can get the star icon from Android Studio asset studio.-->
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvEmailTime"
+        android:padding="5dp"
+        android:src="@drawable/ic_star_black_24dp" />
+
+
+    <!--
+       7- Create a new resource file and name it recyclerview_mail_item.xml, in this file you are
+       going to add views that later will appear in each row inside Android Recyclerview.
+
+       8- First view that you are going to add inside recyclerview_mail_item.xml is the email
+       sender icon which is not actually an icon! It’s just an Android Textview with a circle
+       drawable as a background which appear like an actual icon :]
+
+       9- Create a new file under drawable folder and name it rounded_drawable.xml,
+        inside this file you will add an Android shape which is oval with a background color.
+
+        next:
+         10- Open up recyclerview_mail_item.xml file and add an Android TextView that
+         will represent the email sender icon. In this TextView you will use the rounded
+         drawable as the background and you will need to adjust the layout width and height
+          that so that it will look great next to the other views.
+
+          11- Customize the appearance of (tvIcon) by changing the text color, increasing text size,
+           add some margin from the top and position the text to be in the center.
+          -->
+
+</RelativeLayout>
