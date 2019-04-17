@@ -43,21 +43,24 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Android Recyclerview.
         mRecyclerView = findViewById(R.id.recyclerView);
 
-      //  getWindow().setStatusBarColor(getResources().getColor((R.color.StatusBarColor)));
-
+        // Initialize Android LinearLayoutManager, this layout manager is used together with
+        // Android Recyclerview to determine whether you want to allow the user to scroll
+        // in a vertical or horizontal orientation.
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(MainActivity.this,
                 LinearLayoutManager.VERTICAL, false);
 
-
+        // Initialize Android DividerItemDecoration, this item decoration is used to draw
+        // a line under each item in Recyclerview.
         mRecyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this,
                 DividerItemDecoration.VERTICAL));
 
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
+        //Set the data to Android Recyclerview adapter.
         MailAdapter mMailAdapter = new MailAdapter(MainActivity.this,   mEmailData);
         mRecyclerView.setAdapter(mMailAdapter);
 
-
+        // Initialize the actual data that will show up in Recyclerview.
         EmailData mEmail = new EmailData("Sam", "Weekend adventure",
                 "Let's go fishing with John and others. We will do some barbecue and have soo much fun",
                 "10:42am");
